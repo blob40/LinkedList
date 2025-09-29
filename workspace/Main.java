@@ -6,6 +6,9 @@ public class Main{
     public static void main(String[] args)
         throws IOException
     {
+      testA();
+      testD();
+      testC();
         // Enter data using BufferReader
         BufferedReader reader = new BufferedReader(
             new InputStreamReader(System.in));
@@ -39,5 +42,42 @@ public class Main{
  
         // Printing the read line
         System.out.println("thanks for playing!");
+
+
+    }
+
+    public static void testA (){
+         LinkedList tester = new LinkedList();
+         tester.addAValue("Alpha");
+         tester.addAValue("Beta");
+         tester.addAValue("Gamma");
+         tester.addAValue("Delta");
+         tester.addAValue("Epsilon");
+         tester.addAValue("Zeta");
+         tester.addAValue("Eta");
+
+        System.out.println(tester.showValues());
+
+    }
+    public static void testD (){
+      LinkedList tester = new LinkedList();
+         tester.addAValue("Alpha");
+         tester.addAValue("Beta");
+         tester.addAValue("Gamma");
+         tester.addAValue("Delta");
+         tester.deleteAValue("Beta");
+          tester.deleteAValue("Alpha");
+        System.out.println(tester.showValues());
+
+    }
+    public  static void testC (){
+          LinkedList tester = new LinkedList();
+         tester.addAValue("Alpha");
+         tester.addAValue("Beta");
+         tester.addAValue("Gamma");
+         tester.addAValue("Delta");
+         tester.clear();
+        System.out.println(tester.showValues());
+
     }
 }

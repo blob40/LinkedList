@@ -14,8 +14,6 @@ Problem:  Write a program that keeps and manipulates a linked list of
 	Output:  the results to the screen of each menu
 	    choice, and error messages where appropriate.
 */
-public class LinkedList{
-
 
 // Alexandria Krouse
 // 9/24/25
@@ -37,7 +35,6 @@ public class LinkedList{
   //postcondition: the ListNode containing the appropriate value has been added and returned
   public ListNode addAValue(String line)
   {
-    return null;
     ListNode newNode = new ListNode(line, null);
 
     if(head ==null){
@@ -50,7 +47,7 @@ public class LinkedList{
     else {//adding to middle or end
     //traverse until you find the right spot. When the next element is larger than you.
     ListNode next= head;
-    while((next.getNext() != null) && (next.getNext().getValue().compareTo(next.getValue())<0)){
+    while((next.getNext() != null) && (next.getNext().getValue().compareTo(line)<0)){
     next = next.getNext();
     }
 //do something to newNode so we don't lose the rest of the list
@@ -95,7 +92,6 @@ public class LinkedList{
   //postconditions: returns a string containing all values appended together with spaces between.
   public String showValues()
   {
-    return null;
     ListNode next = head;
     String result = "";
     while(next != null){
