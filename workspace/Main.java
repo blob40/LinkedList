@@ -7,8 +7,10 @@ public class Main{
         throws IOException
     {
       testA();
-      testD();
-      testC();
+      //testD();
+      //testC();
+      //testR();
+    //   testRN();
         // Enter data using BufferReader
         BufferedReader reader = new BufferedReader(
             new InputStreamReader(System.in));
@@ -33,6 +35,14 @@ public class Main{
           else if(input.equals("clear"))
           {
             list.clear();
+          }
+           else if(input.equals("reverse"))
+          {
+            list.reverse();
+          }
+          else if(input.contains("nrev"))
+          {
+           System.out.println("got "+ list.reverseN(Integer.parseInt(input.substring(5))));
           }
           else if(!input.equals("exit")){
               System.out.println("I don't know how to "+input);
@@ -79,5 +89,32 @@ public class Main{
          tester.clear();
         System.out.println(tester.showValues());
 
+    }
+
+    public static void testR (){
+       LinkedList tester = new LinkedList();
+     tester.addAValue("Alpha");
+         tester.addAValue("Beta");
+         tester.addAValue("Gamma");
+         tester.addAValue("Delta");
+         tester.addAValue("Epsilon");
+         tester.addAValue("Zeta");
+         tester.addAValue("Eta");
+         tester.reverse();
+         System.out.println(tester.showValues());
+      
+    }
+    public static void testRN (){
+       LinkedList tester = new LinkedList();
+     tester.addAValue("Alpha");
+         tester.addAValue("Beta");
+         tester.addAValue("Gamma");
+         tester.addAValue("Delta");
+         tester.addAValue("Epsilon");
+         tester.addAValue("Zeta");
+         tester.addAValue("Eta");
+         tester.reverseN(2);
+         System.out.println(tester.showValues());
+      
     }
 }
