@@ -93,6 +93,7 @@ public class LinkedList {
     ListNode next = head;
     String result = "";
     while (next != null) {
+      System.out.println("looking at " + next.getValue());
       result += next.getValue() + " ";
       next = next.getNext();
     }
@@ -136,7 +137,7 @@ public class LinkedList {
       // original reverse
       for (int i = 0; i < n-1 && next != null; i++) {
         curr = next.getNext();
-        System.out.println(next.getValue() + " connects to " + (prev == null ? "null" : prev.getValue()));
+    
         next.setNext(prev);
         prev = next;
         next = curr;
@@ -145,23 +146,21 @@ public class LinkedList {
 
       // connecting the groups
       if (Oldtail != null) {
-        System.out.println("here");
-        System.out.println(Oldtail.getValue() + " connects to " + prev.getValue());
         Oldtail.setNext(prev);
 
       } else {
-        System.out.println("made head "+prev.getValue());
         head = prev;
       }
 
       Oldtail = Ntail;
-      Ntail = curr;
-      prev = curr;
-      if(next!= null)
+      Oldtail.setNext(next);
+      prev = next;
+      if(next!= null){
       next = next.getNext();
-
-    }
-    System.out.println("returning "+head.getNext().getValue());
+      }
+    } 
+    
+   
     return head;
   }
 }
